@@ -94,33 +94,39 @@ script{
 
 /* ----------------------------------- Colors ----------------------------------- */
 :root{
-    --c-FG1: #FDFDFD;
-    --c-FG2: #e7e0e0;
-    --c-BG1: #262424;
-    --c-BG2: #414040;
-    --c-header1: #000000;
-    --c-accent1: #1c5242;
+    --c-FG1: #070707;
+    --c-FG2: #414040;
+    --c-BG1: #ffffff;
+    --c-BG2: #e7e0e0;
+    --c-accent1: #E4EEF0;
+    --c-accent2: #CDCDCD;
+    --c-accent3: #D9D9D9;
+    --c-accent4: #393939;
 }
 
 /* ---------------------------------- Invert Colors ---------------------------------- */
 
 .invertColor{
-    --c-FG1: #262424;
-    --c-FG1: #414040;
-    --c-BG1: #FDFDFD;
-    --c-BG1: #e7e0e0;
-    --c-header1: #FFFFFF;
-    --c-accent1: #98eed4;
+    --c-FG1: #ffffff;
+    --c-FG2: #e7e0e0;
+    --c-BG1: #070707;
+    --c-BG2: #414040;
+    --c-accent1: #393939;
+    --c-accent2: #D9D9D9;
+    --c-accent3: #E4EEF0;
+    --c-accent4: #CDCDCD;
 }
 
 
 .invertColor .invertColor{
-    --c-FG1: #FDFDFD;
-    --c-FG2: #e7e0e0;
-    --c-BG1: #262424;
-    --c-BG2: #414040;
-    --c-header1: #000000;
-    --c-accent1: #1c5242;
+    --c-FG1: #070707;
+    --c-FG2: #414040;
+    --c-BG1: #ffffff;
+    --c-BG2: #e7e0e0;
+    --c-accent1: #E4EEF0;
+    --c-accent2: #CDCDCD;
+    --c-accent3: #D9D9D9;
+    --c-accent4: #393939;
 }
 
 
@@ -137,7 +143,6 @@ script{
 body > header{
     padding-left: var(--s-sideMargin);
     padding-right: var(--s-sideMargin);
-    background-color: var(--c-header1);
 }
 
 input.invCheckbox{
