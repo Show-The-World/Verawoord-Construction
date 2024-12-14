@@ -1,0 +1,186 @@
+/* --------------------- Spreads -------------------- */
+
+
+.-spread-spaceBetween, .-spread-spaceEvenly{
+    display: flex;
+    flex-direction: column;
+}
+.-spread-spaceBetween{
+    justify-content: space-between;
+}
+.-spread-spaceEvenly{
+    justify-content: space-evenly;
+}
+
+
+.-spread-em1 > *:not(:last-child){
+    margin-bottom: 0.3em;
+}
+.-spread-em2 > *:not(:last-child){
+    margin-bottom: 0.5em;
+}
+.-spread-em3 > *:not(:last-child){
+    margin-bottom: 0.8em;
+}
+.-spread-em4 > *:not(:last-child){
+    margin-bottom: 1em;
+}
+.-spread-em5 > *:not(:last-child){
+    margin-bottom: 1.3em;
+}
+.-spread-em6 > *:not(:last-child){
+    margin-bottom: 1.6em;
+}
+.-spread-em7 > *:not(:last-child){
+    margin-bottom: 1.7em;
+}
+
+
+.-spread-spacing1 > *:not(:last-child){
+    margin-bottom: var(--s-spacing1);
+}
+.-spread-spacing2 > *:not(:last-child){
+    margin-bottom: var(--s-spacing2);
+}
+.-spread-spacing3 > *:not(:last-child){
+    margin-bottom: var(--s-spacing3);
+}
+.-spread-spacing4 > *:not(:last-child){
+    margin-bottom: var(--s-spacing4);
+}
+
+
+
+
+
+/* ---------------- Layout Utilities ---------------- */
+
+.-tool-layoutSideMarginImgOverflow-left {
+    padding-left: 0;
+}
+.-lu-layoutSideMarginImgOverflow-right {
+    padding-right: 0;
+}
+@media screen and (max-width: 700px) {
+    .-lu-layoutSideMarginImgOverflow-left, .-lu-layoutSideMarginImgOverflow-right, .-lu-layoutSideMarginImgOverflow-mobile {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .-lu-layoutSideMarginImgOverflow-left>*:not(.section > .imgWrapper),
+    .-lu-layoutSideMarginImgOverflow-right>*:not(.section > .imgWrapper),
+    .-lu-layoutSideMarginImgOverflow-mobile>*:not(.section > .imgWrapper) {
+        padding-left: var(--s-sideMargin);
+        padding-right: var(--s-sideMargin);
+    }
+}
+
+
+
+@media screen and (min-width: 700px) {
+    .-lu-narrowSection-1 {
+        --smallSidePadding: calc(var(--s-sideMargin) * 1.5);
+    }
+
+    .-lu-narrowSection-2 {
+        --smallSidePadding: calc(var(--s-sideMargin) * 2);
+    }
+    .-lu-narrowSection-3 {
+        --smallSidePadding: calc(var(--s-sideMargin) * 2.5);
+    }
+
+    .-lu-narrowSection-1, .-lu-narrowSection-2, .-lu-narrowSection-3 {
+        padding-left: var(--smallSidePadding);
+        padding-right: var(--smallSidePadding);
+    }
+}
+
+
+.-lu-evenPadding-1 {
+    padding: var(--s-spacing1);
+}
+.-lu-evenPadding-2 {
+    padding: var(--s-spacing2);
+}
+.-lu-evenPadding-3 {
+    padding: var(--s-spacing3);
+}
+.-lu-evenPadding-4 {
+    padding: var(--s-spacing4);
+}
+.-lu-evenPadding-5 {
+    padding: var(--s-spacing5);
+}
+.-lu-evenPadding-6 {
+    padding: var(--s-spacing6);
+}
+
+
+
+/* ---------------- Layout Flares ---------------- */
+
+/* Sets background color for sections */
+.-lf-bgColor-1 {
+    background-color: var(--c-BG1);
+}
+.-lf-bgColor-2 {
+    background-color: var(--c-BG2);
+}
+.-lf-bgColor-3 {
+    background-color: var(--c-BG3);
+}
+
+
+
+/* Sets Half background to section to spefific color */
+.-lf-bgColorHalf-1 {
+    position: relative;
+}
+.-lf-bgColorHalf-1::before {
+    content: "";
+    position: absolute;
+    background-color: var(--c-BG1);
+    top: 0;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    z-index: -999;
+}
+
+
+
+
+/* Adds a decorative image backsplash */
+.-f-backsplash-img {
+    position: relative;
+}
+.-f-backsplash-img::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    left: -50%;
+    bottom: 0;
+    background-image: var(--backsplashURL, url('/assets/backsplash.svg'));
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: -999;
+}
+
+
+
+
+.-f-iconText-inline1 .icon {
+    height: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+    object-fit: contain;
+    object-position: center;
+    width: auto;
+
+}
+.-f-iconText-inline1{
+    display: flex;
+    gap: 1em;
+}

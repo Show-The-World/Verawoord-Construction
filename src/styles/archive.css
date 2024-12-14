@@ -1,0 +1,81 @@
+
+/* ---------------- Typography Flares ---------------- */
+
+/* Adds a top line to text with differnt alignements */
+.-tf-topLine-Center {
+    position: relative;
+}
+.-tf-topLineCenter::before {
+    content: '';
+    position: absolute;
+    top: -0.25em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    height: 0.1em;
+    background-color: var(--c-accent1);
+}
+
+.-tf-topLineLeft {
+    position: relative;
+}
+.-tf-topLineLeft::before {
+    content: '';
+    position: absolute;
+    top: -0.25em;
+    left: 0;
+    width: 30%;
+    height: 0.075em;
+    background-color: var(--c-accent1);
+}
+
+.-tf-topLineRight {
+    position: relative;
+}
+.-tf-topLineRight::before {
+    content: '';
+    position: absolute;
+    top: -0.25em;
+    right: 0;
+    width: 30%;
+    height: 0.1em;
+    background-color: var(--c-accent1);
+}
+
+/* Adds a vertical side line to typography */
+.-tf-sideLineLeft::before {
+    position: absolute;
+    content: "";
+    left: -0.3em;
+    width: 0.1em;
+    top: 0.2em;
+    bottom: 0.2em;
+    background-color: var(--c-accent1);
+}
+
+
+
+
+
+
+
+/* ---------------- General Flares ---------------- */
+
+/* Adds a vertical side line to element */
+.-f-sideLineRight {
+    border-right: solid var(--s-border3) var(--c-accent1);
+}
+.-f-sideLineLeft {
+    border-left: solid var(--s-border3) var(--c-accent1);
+}
+
+
+
+
+/* Creates a circular image crop effect */
+.-f-cropCircle {
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+}

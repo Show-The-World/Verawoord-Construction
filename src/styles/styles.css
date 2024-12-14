@@ -1,0 +1,227 @@
+/**************************************************************************************************************************************/
+/*********************************************************** RESET / DEFAULT **********************************************************/
+/**************************************************************************************************************************************/
+
+/* ----------------- Reset ----------------- */
+*{
+    margin: 0;
+    padding: 0;
+    background: none;
+    box-sizing: border-box;
+    border: 0;
+    font-style: normal;
+    font-family: sans-serif;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 500;
+    font-size: 1em;
+    position: relative;
+    transition: ease 0.2s;
+}
+
+
+
+
+
+/* --------------- Default --------------- */
+
+*{
+    color: var(--c-FG1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+  
+body{
+    background-color: var(--c-BG1);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+body *{
+    display: block;
+}
+span{
+    display: inline-block;
+}
+
+a, button, label{
+    cursor: pointer;
+    user-select: none;
+}
+
+h1, h2, h3, h4, p, a, button, label{
+    width: fit-content;
+    height: fit-content;
+}
+script{
+    display: none;
+}
+
+
+
+
+
+
+/**************************************************************************************************************************************/
+/**************************************************************** VARS ****************************************************************/
+/**************************************************************************************************************************************/
+
+/* ----------------------------------- Sizes ----------------------------------- */
+:root{
+    --s-headerHeight: calc((50 /16 * 1rem) + ((130 - 50) * ((100vw - 320px) / (1920 - 320))));
+    --s-sideMargin: calc((10 /16 * 1rem) + ((200 - 10) * ((100vw - 320px) / (1920 - 320))));
+    --s-sectionSpace: calc((150 /16 * 1rem) + ((340 - 150) * ((100vw - 320px) / (1920 - 320))));
+    
+    --s-border1: 1px;
+    --s-border2: calc((1 / 16 * 1rem) + ((1.5 - 1) * ((100vw - 320px) / (1920 - 320))));
+    --s-border3: calc((1.5 / 16 * 1rem) + ((2 - 1.5) * ((100vw - 320px) / (1920 - 320))));
+    --s-border4: calc((2 / 16 * 1rem) + ((3 - 2) * ((100vw - 320px) / (1920 - 320))));
+    --s-border5: calc((2.5 / 16 * 1rem) + ((5 - 2.5) * ((100vw - 320px) / (1920 - 320))));
+    --s-border6: calc((4 / 16 * 1rem) + ((8 - 4) * ((100vw - 320px) / (1920 - 320))));
+    --s-border7: calc((6 / 16 * 1rem) + ((10 - 6) * ((100vw - 320px) / (1920 - 320))));
+    --s-border8: calc((10 / 16 * 1rem) + ((15 - 10) * ((100vw - 320px) / (1920 - 320))));
+
+    --s-spacing1: calc((16 / 16 * 1rem) + ((24 - 16) * ((100vw - 320px) / (1920 - 320))));
+    --s-spacing2: calc((20 / 16 * 1rem) + ((32 - 20) * ((100vw - 320px) / (1920 - 320))));
+    --s-spacing3: calc((22 / 16 * 1rem) + ((48 - 22) * ((100vw - 320px) / (1920 - 320))));
+    --s-spacing4: calc((24 / 16 * 1rem) + ((64 - 24) * ((100vw - 320px) / (1920 - 320))));
+    --s-spacing5: calc((30 / 16 * 1rem) + ((80 - 30) * ((100vw - 320px) / (1920 - 320))));
+    --s-spacing6: calc((35 / 16 * 1rem) + ((95 - 35) * ((100vw - 320px) / (1920 - 320))));
+}
+
+
+
+/* ----------------------------------- Colors ----------------------------------- */
+:root{
+    --c-FG1: #FDFDFD;
+    --c-FG2: #e7e0e0;
+    --c-BG1: #262424;
+    --c-BG2: #414040;
+    --c-header1: #000000;
+    --c-accent1: #1c5242;
+}
+
+/* ---------------------------------- Invert Colors ---------------------------------- */
+
+.invertColor{
+    --c-FG1: #262424;
+    --c-FG1: #414040;
+    --c-BG1: #FDFDFD;
+    --c-BG1: #e7e0e0;
+    --c-header1: #FFFFFF;
+    --c-accent1: #98eed4;
+}
+
+
+.invertColor .invertColor{
+    --c-FG1: #FDFDFD;
+    --c-FG2: #e7e0e0;
+    --c-BG1: #262424;
+    --c-BG2: #414040;
+    --c-header1: #000000;
+    --c-accent1: #1c5242;
+}
+
+
+
+
+
+
+/**************************************************************************************************************************************/
+/*************************************************************** HEADER ***************************************************************/
+/**************************************************************************************************************************************/
+
+
+
+body > header{
+    padding-left: var(--s-sideMargin);
+    padding-right: var(--s-sideMargin);
+    background-color: var(--c-header1);
+}
+
+input.invCheckbox{
+    display: none;
+}
+
+
+
+
+
+/**************************************************************************************************************************************/
+/*************************************************************** IMAGES ***************************************************************/
+/**************************************************************************************************************************************/
+
+img{
+    max-height: 90vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+@media screen and (max-width:700px){
+    img{
+        max-height: 50vh;
+    }
+}
+
+
+.icon{
+    height: auto;
+}
+
+
+
+
+
+
+
+/**************************************************************************************************************************************/
+/********************************************************** SECTIONS/LAYOUTS **********************************************************/
+/**************************************************************************************************************************************/
+
+
+
+
+.section{
+    padding: calc(var(--s-sectionSpace) / 2) var(--s-sideMargin);
+    overflow-x: hidden; 
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+
+.section > h1:not(:last-child),
+.section > h2:not(:last-child),
+.section > h3:not(:last-child),
+.section > h4:not(:last-child){
+    margin-bottom: var(--s-spacing3);
+}
+
+.section > a:last-child,
+.section > button:last-child{
+    margin-top: var(--s-spacing3);
+}
+
+.sectionItemCenter > h1,
+.sectionItemCenter > h2,
+.sectionItemCenter > h3,
+.sectionItemCenter > h4,
+.sectionItemCenter > a,
+.sectionItemCenter > button,
+.sectionItemCenter > .sectionItem{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.sectionItemRight > h1,
+.sectionItemRight > h2,
+.sectionItemRight > h3,
+.sectionItemRight > h4,
+.sectionItemRight > a,
+.sectionItemRight > button,
+.sectionItemRight > .sectionItem{
+    margin-left: auto;
+    text-align: right;
+}

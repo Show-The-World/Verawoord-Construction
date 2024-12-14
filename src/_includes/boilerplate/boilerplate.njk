@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/tools.css">
+    <link rel="stylesheet" href="/styles/components.css">
+
+    {% block links %}{% endblock %}
+
+    {% block head %}{% endblock %}
+</head>
+
+
+
+<body>
+{% if hasHeader | default(true) %}
+{% endif %}
+
+
+{% if hasSubHero | default(true) %}
+{% endif %}
+
+
+
+
+
+{% block content %}{% endblock %}
+
+
+
+
+{% if hasCTA | default(true) %}
+    
+{% endif %}
+
+{% if hasFotter | default(true) %}
+    {% include "base_layouts/footer.njk" %}
+{% endif %}
+</body>
+</html>
