@@ -172,7 +172,7 @@
 
 
 .-f-iconText-inline1 .icon {
-    height: 1em;
+    height: 0.8;
     margin-top: auto;
     margin-bottom: auto;
     object-fit: contain;
@@ -182,5 +182,9 @@
 }
 .-f-iconText-inline1{
     display: flex;
-    gap: 1em;
+    gap: 0.8em;
+}
+
+a.-f-iconText-inline1:hover, button.-f-iconText-inline1:hover{
+    gap: 1.8em;
 }
