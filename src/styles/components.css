@@ -5,7 +5,7 @@
 
 h1{
     font-family: Sofia Sans, sans-serif;
-    font-size: 72px;
+    font-size: calc((42 /16 * 1rem) + ((72 - 42) * ((100vw - 320px) / (1920 - 320))));
     font-weight: 500;
 }
 
@@ -13,30 +13,30 @@ h1{
 
 h2{
     font-family: Sofia Sans, sans-serif;
-    font-size: 45px;
+    font-size: calc((32 /16 * 1rem) + ((45 - 32) * ((100vw - 320px) / (1920 - 320))));
     font-weight: 500;
 }
 .-t-h2Big{
-    font-size: 64px;
+    font-size: calc((30 /16 * 1rem) + ((64 - 30) * ((100vw - 320px) / (1920 - 320))));
     font-weight: 500;
 }
 
 
 h3{
     font-family: Sofia Sans, sans-serif;
-    font-size: 32px;
+    font-size: calc((22 /16 * 1rem) + ((32 - 22) * ((100vw - 320px) / (1920 - 320))));
     font-weight: 500;
 }
 
 p{
     font-family: Inter, sans-serif;
-    font-size: 24px;
+    font-size: calc((20 /16 * 1rem) + ((24 - 20) * ((100vw - 320px) / (1920 - 320))));
     color: var(--c-FG2);
     line-height: 1.4;
     font-weight: 400;
 }
 .-t-pMedium{
-    font-size: 20px;
+    font-size: calc((20 /16 * 1rem) + ((18 - 20) * ((100vw - 320px) / (1920 - 320))));
     color: var(--c-FG2);
 }
 .-t-pSmall{
@@ -50,9 +50,10 @@ a, button, label, .-t-1{
     font-weight: 600;
 }
 
+
 .-t-2{
     font-family: Sofia Sans, sans-serif;
-    font-size: 48px;
+    font-size: calc((24 /16 * 1rem) + ((46 - 24) * ((100vw - 320px) / (1920 - 320))));
 }
 
 
@@ -70,10 +71,10 @@ a, button, label, .-t-1{
     padding: 0.8em 2em;
     border-radius: 1000px;
     border: solid 0.1em var(--c-FG1);
-    background-color: var(--c-BG1);
 }
 .-b-1:hover{
-    filter: invert(1);
+    background-color: var(--c-FG1);
+    color: var(--c-BG2);
 }
 
 
@@ -81,14 +82,342 @@ a, button, label, .-t-1{
     padding: 0.8em 2em;
     border-radius: 1000px;
     background-color: var(--c-FG2);
-    color: var(--c-BG1);
+    color: var(--c-BG2);
 }
 .-b-2:hover{
-    background-color: var(--c-accent1);
+    background-color: var(--c-accent2);
     color: var(--c-FG1);
 }
 
 
 .-b-3:hover{
     font-weight: 700;
+}
+
+
+.-f-iconText-inline1.-b-3:hover:hover{
+    gap: 1.8em;
+}
+
+
+
+
+.-b-info{
+    font-family: Inter, sans-serif;
+    color: var(--c-FG1);
+    font-size: 16px;
+    font-weight: 600;
+}
+.-b-info.-f-iconText-inline1{
+    gap: 1.2em;
+}
+.-b-info.-f-iconText-inline1 .icon{
+    height: 1.2em;
+}
+
+a.-b-info:hover{
+    filter: blur(0.065em);
+}
+
+
+/****************************************************************************************************************************************/
+/**************************************************************** LAYOTUS ***************************************************************/
+/****************************************************************************************************************************************/
+
+
+
+.-layout-2Col_ImgSpread-2{
+    display: flex;
+    gap: calc(var(--s-sideMargin));
+    flex-direction: column;
+    align-items: center;
+}
+.-layout-2Col_ImgSpread-2 > .imgWrapper {
+    align-self: stretch;
+}
+
+@media screen and (min-width: 700px ){
+    .-layout-2Col_ImgSpread-2{
+        flex-direction: row;
+    }
+    .-layout-2Col_ImgSpread-2 .container{
+        flex: 1;
+    }
+    .-layout-2Col_ImgSpread-2 .imgWrapper{
+        flex: 0.85;
+    }
+}
+
+
+.-layout-3Col_Card_fixed1.cardContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.-layout-3Col_Card_fixed1.cardContainer > .card{
+    width: calc((90 /16 * 1rem) + ((300 - 90) * ((100vw - 320px) / (1920 - 320))));
+}
+
+
+
+.-layout-3ColGrid_Card_2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--s-spacing5);
+}
+
+
+@media screen and (max-width:1300px){
+    .-layout-3ColGrid_Card_2{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:800px){
+    .-layout-3ColGrid_Card_2{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+.-layout-4Col_Card_1.cardContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--s-spacing6);
+    row-gap: var(--s-spacing7);
+}
+.-layout-4Col_Card_1.cardContainer > .card{
+    height: fit-content;
+    width: 100%;
+}
+
+
+@media screen and (max-width:1250px){
+    .-layout-4Col_Card_1.cardContainer{
+        grid-template-columns:  1fr 1fr;
+    }
+}
+
+@media screen and (max-width:550px){
+    .-layout-4Col_Card_1.cardContainer{
+        grid-template-columns: 1fr ;
+    }
+}
+
+
+
+
+.-layout-2ColGrid_Card_1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-sideMargin);
+}
+
+@media screen and (max-width:1000px){
+    .-layout-2ColGrid_Card_1{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.-layout-2Col_ImgSpread_1{
+    display: flex;
+    gap: var(--s-sideMargin);
+    flex-direction: column;
+}
+
+@media screen and (min-width: 700px ){
+    .-layout-2Col_ImgSpread_1{
+        flex-direction: row;
+    }
+    .-layout-2Col_ImgSpread_1 .container{
+        flex: 1;
+    }
+    .-layout-2Col_ImgSpread_1 .imgWrapper{
+        flex: 1;
+    }
+}
+
+
+
+
+/****************************************************************************************************************************************/
+/**************************************************************** CARDS *****************************************************************/
+/****************************************************************************************************************************************/
+
+
+.-card-1 .imgWrapper{
+    height: calc((250 /16 * 1rem) + ((380 - 250) * ((100vw - 320px) / (1920 - 320))));
+}
+.-card-1 a{
+    margin-top: auto;
+}
+
+
+
+
+.-card-2 > *:first-child{
+    margin-left: auto;
+    margin-right: auto;
+}
+.-card-2 .-t-1{
+    font-size: calc((8 /16 * 1rem) + ((20 - 8) * ((100vw - 320px) / (1920 - 320))));
+}
+.-card-2 .-f-iconText-inline1{
+    gap: 2em;
+}
+.-card-2  .-f-iconText-inline1 .icon{
+    background-color: var(--c-FG1);
+    border-radius: 1000px;
+    height: 3em;
+    width: 3em;
+    padding: 0.5em;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.-card-2  .-f-iconText-inline1 .icon > img{
+    width: 70%;
+    object-position: center;
+    height: auto;
+}
+
+@media screen and (max-width:1000px){
+    .-card-2  .-f-iconText-inline1 .icon{
+    }
+
+    .-card-2 .-f-iconText-inline1{
+    }
+}
+
+
+
+.-card-3 h3{
+    padding-left: 3em;
+    height: 2.5em;
+}
+.-card-3 .counter{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--c-accent2);
+    font-weight: 800;
+}
+.-card-3 .counter::before{
+    content: "0";
+}
+
+
+
+.-card-testimonial > .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.-card-testimonial > .container > .subContainer{
+    
+}
+
+
+.-card-testimonial .icon_quote{
+    width: 6%;
+}
+.-card-testimonial .icon_reviewStars{
+    width: 80%;
+}
+.-card-testimonial .icon_persona{
+    width: 15%;
+}
+
+
+
+
+/****************************************************************************************************************************************/
+/**************************************************************** HEADER ****************************************************************/
+/****************************************************************************************************************************************/
+body > header{
+    height: var(--s-headerHeight);  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+body > header > *{
+    width: 100%;
+}
+
+header li{
+    overflow-x: hidden;
+}
+header li * {
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+}
+
+body > header > nav, body > header > ul.info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+body > header > nav > ul{
+    display: flex;
+    gap: var(--s-spacing3);
+}
+
+
+
+
+
+
+
+/******************************************************************************************************************************************/
+/**************************************************************** subHero *****************************************************************/
+/******************************************************************************************************************************************/
+
+
+.section.subHero{
+    margin-top: var(--s-headerHeight);
+    padding-top: var(--s-spacing2);
+    padding-bottom: var(--s-spacing2);
+}
+
+.section.subHero::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: var(--c-BG2);
+    width: 35%;
+    clip-path: polygon(15% 0%, 100% 0, 100% 100%, 0% 100%);
+
+}
+
+
+
+
+/****************************************************************************************************************************************/
+/**************************************************************** OTHER *****************************************************************/
+/****************************************************************************************************************************************/
+
+
+
+hr{
+    background-color: var(--c-accent1);
+    height: var(--s-border1);
 }

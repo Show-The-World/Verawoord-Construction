@@ -22,7 +22,6 @@
 
 
 
-
 /* --------------- Default --------------- */
 
 *{
@@ -36,10 +35,11 @@ html {
 body{
     background-color: var(--c-BG1);
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-y: scroll;
 }
 body *{
     display: block;
+    position: relative;
 }
 span{
     display: inline-block;
@@ -69,8 +69,8 @@ script{
 
 /* ----------------------------------- Sizes ----------------------------------- */
 :root{
-    --s-headerHeight: calc((50 /16 * 1rem) + ((130 - 50) * ((100vw - 320px) / (1920 - 320))));
-    --s-sideMargin: calc((10 /16 * 1rem) + ((200 - 10) * ((100vw - 320px) / (1920 - 320))));
+    --s-headerHeight: calc((50 /16 * 1rem) + ((115 - 50) * ((100vw - 320px) / (1920 - 320))));
+    --s-sideMargin: calc((15 /16 * 1rem) + ((220 - 15) * ((100vw - 320px) / (1920 - 320))));
     --s-sectionSpace: calc((150 /16 * 1rem) + ((340 - 150) * ((100vw - 320px) / (1920 - 320))));
     
     --s-border1: 1px;
@@ -88,6 +88,7 @@ script{
     --s-spacing4: calc((24 / 16 * 1rem) + ((64 - 24) * ((100vw - 320px) / (1920 - 320))));
     --s-spacing5: calc((30 / 16 * 1rem) + ((80 - 30) * ((100vw - 320px) / (1920 - 320))));
     --s-spacing6: calc((35 / 16 * 1rem) + ((95 - 35) * ((100vw - 320px) / (1920 - 320))));
+    --s-spacing7: calc((48 / 16 * 1rem) + ((115 - 48) * ((100vw - 320px) / (1920 - 320))));
 }
 
 
@@ -96,9 +97,9 @@ script{
 :root{
     --c-FG1: #070707;
     --c-FG2: #414040;
-    --c-BG1: #ffffff;
-    --c-BG2: #e7e0e0;
-    --c-accent1: #E4EEF0;
+    --c-BG1: #E4EEF0;
+    --c-BG2: #ffffff;
+    --c-accent1: #e7e0e0;
     --c-accent2: #CDCDCD;
     --c-accent3: #D9D9D9;
     --c-accent4: #393939;
@@ -106,29 +107,16 @@ script{
 
 /* ---------------------------------- Invert Colors ---------------------------------- */
 
-.invertColor{
-    --c-FG1: #ffffff;
-    --c-FG2: #e7e0e0;
+.colorInvert{
+    --c-FG1: #E4EEF0;
+    --c-FG2: #ffffff;
     --c-BG1: #070707;
     --c-BG2: #414040;
     --c-accent1: #393939;
     --c-accent2: #D9D9D9;
-    --c-accent3: #E4EEF0;
-    --c-accent4: #CDCDCD;
+    --c-accent3: #CDCDCD;
+    --c-accent4: #e7e0e0;
 }
-
-
-.invertColor .invertColor{
-    --c-FG1: #070707;
-    --c-FG2: #414040;
-    --c-BG1: #ffffff;
-    --c-BG2: #e7e0e0;
-    --c-accent1: #E4EEF0;
-    --c-accent2: #CDCDCD;
-    --c-accent3: #D9D9D9;
-    --c-accent4: #393939;
-}
-
 
 
 
@@ -181,52 +169,3 @@ img{
 
 
 
-/**************************************************************************************************************************************/
-/********************************************************** SECTIONS/LAYOUTS **********************************************************/
-/**************************************************************************************************************************************/
-
-
-
-
-.section{
-    padding: calc(var(--s-sectionSpace) / 2) var(--s-sideMargin);
-    overflow-x: hidden; 
-    margin-top: -1px;
-    margin-bottom: -1px;
-}
-
-
-.section > h1:not(:last-child),
-.section > h2:not(:last-child),
-.section > h3:not(:last-child),
-.section > h4:not(:last-child){
-    margin-bottom: var(--s-spacing3);
-}
-
-.section > a:last-child,
-.section > button:last-child{
-    margin-top: var(--s-spacing3);
-}
-
-.sectionItemCenter > h1,
-.sectionItemCenter > h2,
-.sectionItemCenter > h3,
-.sectionItemCenter > h4,
-.sectionItemCenter > a,
-.sectionItemCenter > button,
-.sectionItemCenter > .sectionItem{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.sectionItemRight > h1,
-.sectionItemRight > h2,
-.sectionItemRight > h3,
-.sectionItemRight > h4,
-.sectionItemRight > a,
-.sectionItemRight > button,
-.sectionItemRight > .sectionItem{
-    margin-left: auto;
-    text-align: right;
-}

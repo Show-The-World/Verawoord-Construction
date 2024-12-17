@@ -24,10 +24,14 @@
 
 <body>
 {% if hasHeader | default(true) %}
+{% include "base_layouts/header.njk"%}
 {% endif %}
 
 
 {% if hasSubHero | default(true) %}
+<section class="-lf-bgColor-accent2 section subHero">
+    <h1>{{title}}</h1>
+</section>
 {% endif %}
 
 
@@ -40,6 +44,13 @@
 
 
 {% if hasCTA | default(true) %}
+<section class="section -lu-narrowSection-1">
+    <div class="-sectionItems-center -lu-narrowSection-1 -lu-padding-even3 -lf-bgColor-2 -spread-spacing2">
+        <h2>Start Your Home Renovation Journey Today</h2>
+        <p>Ready to kick off your next renovation project? We’re here to guide you through every step, answering your questions and ensuring your renovation budget goes a long way.</p>
+        <a class="-b-2" href="">Contact Us For a Home Renovation In Ottawa</a>
+    </div>
+</section>
     
 {% endif %}
 

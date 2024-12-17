@@ -50,26 +50,37 @@
 }
 
 
+.-spread-3Col_1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--s-spacing6);
+}
+
+@media screen and (max-width:1050px){
+    .-spread-3Col_1{
+        grid-template-columns: 1fr;
+    }
+}
 
 
 
 /* ---------------- Layout Utilities ---------------- */
 
-.-tool-layoutSideMarginImgOverflow-left {
+.section.-lu-layoutSideMarginImgOverflow-left{
     padding-left: 0;
 }
-.-lu-layoutSideMarginImgOverflow-right {
+.section.-lu-layoutSideMarginImgOverflow-right {
     padding-right: 0;
 }
 @media screen and (max-width: 700px) {
-    .-lu-layoutSideMarginImgOverflow-left, .-lu-layoutSideMarginImgOverflow-right, .-lu-layoutSideMarginImgOverflow-mobile {
+    .section.-lu-layoutSideMarginImgOverflow-left, .section.-lu-layoutSideMarginImgOverflow-right, .section.-lu-layoutSideMarginImgOverflow-mobile {
         padding-left: 0;
         padding-right: 0;
     }
     
-    .-lu-layoutSideMarginImgOverflow-left>*:not(.section > .imgWrapper),
-    .-lu-layoutSideMarginImgOverflow-right>*:not(.section > .imgWrapper),
-    .-lu-layoutSideMarginImgOverflow-mobile>*:not(.section > .imgWrapper) {
+    .section.-lu-layoutSideMarginImgOverflow-left>*:not(.section > .imgWrapper),
+    .section.-lu-layoutSideMarginImgOverflow-right>*:not(.section > .imgWrapper),
+    .section.-lu-layoutSideMarginImgOverflow-mobile>*:not(.section > .imgWrapper) {
         padding-left: var(--s-sideMargin);
         padding-right: var(--s-sideMargin);
     }
@@ -77,42 +88,80 @@
 
 
 
-@media screen and (min-width: 700px) {
-    .-lu-narrowSection-1 {
-        --smallSidePadding: calc(var(--s-sideMargin) * 1.5);
-    }
-
-    .-lu-narrowSection-2 {
-        --smallSidePadding: calc(var(--s-sideMargin) * 2);
-    }
-    .-lu-narrowSection-3 {
-        --smallSidePadding: calc(var(--s-sideMargin) * 2.5);
-    }
-
-    .-lu-narrowSection-1, .-lu-narrowSection-2, .-lu-narrowSection-3 {
-        padding-left: var(--smallSidePadding);
-        padding-right: var(--smallSidePadding);
-    }
-}
 
 
-.-lu-evenPadding-1 {
+
+.-lu-padding-even1 {
     padding: var(--s-spacing1);
 }
-.-lu-evenPadding-2 {
+.-lu-padding-even2 {
     padding: var(--s-spacing2);
 }
-.-lu-evenPadding-3 {
+.-lu-padding-even3 {
     padding: var(--s-spacing3);
 }
-.-lu-evenPadding-4 {
+.-lu-padding-even4 {
     padding: var(--s-spacing4);
 }
-.-lu-evenPadding-5 {
+.-lu-padding-even5 {
     padding: var(--s-spacing5);
 }
-.-lu-evenPadding-6 {
+.-lu-padding-even6 {
     padding: var(--s-spacing6);
+}
+
+
+.-lu-padding-Inline1 {
+    padding-left: var(--s-spacing1);
+    padding-right: var(--s-spacing1);
+}
+.-lu-padding-Inline2 {
+    padding-left: var(--s-spacing2);
+    padding-right: var(--s-spacing2);
+}
+.-lu-padding-Inline3 {
+    padding-left: var(--s-spacing3);
+    padding-right: var(--s-spacing3);
+}
+.-lu-padding-Inline4 {
+    padding-left: var(--s-spacing4);
+    padding-right: var(--s-spacing4);
+}
+.-lu-padding-Inline5 {
+    padding-left: var(--s-spacing5);
+    padding-right: var(--s-spacing5);
+}
+.-lu-padding-Inline6 {
+    padding-left: var(--s-spacing6);
+    padding-right: var(--s-spacing6);
+}
+
+
+@media screen and (min-width: 700px) {
+    section.-lu-narrowSection-05, .-lu-narrowSection-0_5 {
+        padding-right: calc(var(--s-sideMargin) * 0.5);
+        padding-left: calc(var(--s-sideMargin) * 0.5);
+    }
+    
+    
+    section.-lu-narrowSection-1, .-lu-narrowSection-1 {
+        padding-right: calc(var(--s-sideMargin) * 1);
+        padding-left: calc(var(--s-sideMargin) * 1);
+    }
+
+    section.-lu-narrowSection-1, .-lu-narrowSection-1_5 {
+        padding-right: calc(var(--s-sideMargin) * 1.5);
+        padding-left: calc(var(--s-sideMargin) * 1.5);
+    }
+
+    section.-lu-narrowSection-2, .-lu-narrowSection-2 {
+        padding-right: calc(var(--s-sideMargin) * 2);
+        padding-left: calc(var(--s-sideMargin) * 2);
+    }
+    section.-lu-narrowSection-3, .-lu-narrowSection-2_5 {
+        padding-right: calc(var(--s-sideMargin) * 2.5);
+        padding-left: calc(var(--s-sideMargin) * 2.5);
+    }
 }
 
 
@@ -128,6 +177,15 @@
 }
 .-lf-bgColor-3 {
     background-color: var(--c-BG3);
+}
+.-lf-bgColor-accent1 {
+    background-color: var(--c-accent1);
+}
+.-lf-bgColor-accent2 {
+    background-color: var(--c-accent2);
+}
+.-lf-bgColor-accent3 {
+    background-color: var(--c-accent3);
 }
 
 
@@ -172,19 +230,71 @@
 
 
 .-f-iconText-inline1 .icon {
-    height: 0.8;
+    height: 0.8em;
     margin-top: auto;
     margin-bottom: auto;
     object-fit: contain;
     object-position: center;
     width: auto;
-
 }
+.-f-iconText-inline1 .icon img{
+    
+}
+
 .-f-iconText-inline1{
     display: flex;
     gap: 0.8em;
 }
 
-a.-f-iconText-inline1:hover, button.-f-iconText-inline1:hover{
-    gap: 1.8em;
+
+
+
+/**************************************************************************************************************************************/
+/********************************************************** SECTIONS/LAYOUTS **********************************************************/
+/**************************************************************************************************************************************/
+
+
+
+
+.section{
+    padding: calc(var(--s-sectionSpace) / 2) var(--s-sideMargin);
+    overflow-x: hidden; 
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+
+
+.section > *:not(:last-child){
+    margin-bottom: var(--s-spacing6);
+}
+
+.section > a:last-child,
+.section > button:last-child{
+    margin-top: var(--s-spacing3);
+}
+
+.-sectionItems-center > h1,
+.-sectionItems-center > h2,
+.-sectionItems-center > h3,
+.-sectionItems-center > h4,
+.-sectionItems-center > p,
+.-sectionItems-center > a,
+.-sectionItems-center > button,
+.-sectionItems-center > .sectionItems{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.-sectionItems-right > h1,
+.-sectionItems-right > h2,
+.-sectionItems-right > h3,
+.-sectionItems-right > h4,
+.-sectionItems-right > p,
+.-sectionItems-right > a,
+.-sectionItems-right > button,
+.-sectionItems-right > .sectionItems{
+    margin-left: auto;
+    text-align: right;
 }
