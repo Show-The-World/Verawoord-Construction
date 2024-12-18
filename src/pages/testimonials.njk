@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Testimonials
 ---
 
 {% extends "boilerplate/base.njk" %}
@@ -11,4 +11,22 @@ title: Home
 
 
 {% block content %}
+<main class="section">
+    <ul class="layout -layout-2ColGrid_Card_1">
+        {% for review in reviews.list%}
+        <li class="card -lf-bgColor-2 -card-testimonial -lu-padding-even2 -spread-spacing1" style="--starCount: {{ review.starCount }};">
+            <img src="/assets/icon_quote.svg" alt="" class="icon_quote icon">
+            <div class="container -spread-em1">
+                <div class="subContainer">
+                    <h3>{{ review.name }}</h3>
+                    <img src="/assets/review_stars.svg" alt="" class="icon icon_reviewStars">
+                </div>
+                <img src="/assets/persona.svg" alt="" class="icon icon_persona">
+            </div>
+            <p>{{ review.content }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+
 {% endblock %}

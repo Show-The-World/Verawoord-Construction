@@ -12,7 +12,7 @@ hasSubHero: false
 
 
 {% block content %}
-<section class="section -layout-2Col_ImgSpread-2 -lu-layoutSideMarginImgOverflow-right">
+<section id="heroMain" class="section -lf-backsplash-1 -lf-bgColorHalf-1 -layout-2Col_ImgSpread-2 -lu-layoutSideMarginImgOverflow-right">
     <div class="container -spread-em2">
         <h1>Your Go-To Team for Home Renovations in Ottawa</h1>
         <p>Your go-to team for Ottawa home renovations, Verawood Construction transforms homes with expert craftsmanship and quality materials. From full home makeovers to kitchens, bathrooms, basements, and additions, we deliver stunning, budget-friendly results. Serving Ottawa, Kanata, Nepean, and Orleans, we turn your renovation vision into reality—on time and on budget.</p>
@@ -55,7 +55,7 @@ hasSubHero: false
 </section>
 
 
-<section class="section">
+<section class="section  -lf-bgColor-accent2">
     <h2>Our Home Renovation Services</h2>
     <ul class="-layout-3ColGrid_Card_2 cardContainer">
         <li class="-spread-spacing3 card -card-1">
@@ -91,7 +91,7 @@ hasSubHero: false
     </ul>
 </section>
 
-<section class="section -lf-bgColor-2">
+<section class="section">
     <h2>Why Choose Verawood Construction?</h2>
     <div class="cardContainer -layout-4Col_Card_1">
         <div class="card -card-3 -spread-em2">
@@ -123,7 +123,7 @@ hasSubHero: false
 
 
 
-<section class="section -layout-2Col_ImgSpread-2 -lu-layoutSideMarginImgOverflow-right">
+<section id="aboutHome" class="section -layout-2Col_ImgSpread-2 -lf-bgColor-accent1 -lf-inlineMarginSpace -lu-layoutSideMarginImgOverflow-right">
     <div class="container -spread-spacing1">
         <h2>Discover Who We Are</h2>
         <p>Your dream home deserves a team that values integrity, quality, and personalized service. At Verawood Construction, we specialize in creating stunning, functional spaces tailored to your lifestyle.</p>
@@ -136,32 +136,19 @@ hasSubHero: false
 <section class="section">
     <h2>What Our Clients Say</h2>
     <ul class="layout -layout-2ColGrid_Card_1">
-        <li class="card -lf-bgColor-2 -card-testimonial -lu-padding-even2 -spread-spacing1">
+        {% for review in reviews.list.slice(0, 2) %}
+        <li class="card -lf-bgColor-2 -card-testimonial -lu-padding-even2 -spread-spacing1" style="--starCount: {{ review.starCount }};">
             <img src="/assets/icon_quote.svg" alt="" class="icon_quote icon">
             <div class="container -spread-em1">
                 <div class="subContainer">
-                    <h3>Bill</h3>
+                    <h3>{{ review.name }}</h3>
                     <img src="/assets/review_stars.svg" alt="" class="icon icon_reviewStars">
                 </div>
                 <img src="/assets/persona.svg" alt="" class="icon icon_persona">
             </div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum illo, fugiat maxime corporis quo dolorem dolorum animi sapiente quidem accusamus excepturi eveniet explicabo! Recusandae impedit voluptatibus esse cum repellat quisquam sint repudiandae eaque suscipit, pariatur debitis nemo quia cumque obcaecati iure? Laboriosam, fuga. Mollitia obcaecati excepturi rerum debitis dolorum, quidem nihil nam enim voluptatibus consectetur, ipsam nobis quo temporibus eum unde iusto autem et.
-            </p>
+            <p>{{ review.content }}</p>
         </li>
-        <li class="card -lf-bgColor-2 -card-testimonial -lu-padding-even2 -spread-spacing1">
-            <img src="/assets/icon_quote.svg" alt="" class="icon_quote icon">
-            <div class="container -spread-em1">
-                <div class="subContainer">
-                    <h3>Bill</h3>
-                    <img src="/assets/review_stars.svg" alt="" class="icon icon_reviewStars">
-                </div>
-                <img src="/assets/persona.svg" alt="" class="icon icon_persona">
-            </div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum illo, fugiat maxime corporis quo dolorem dolorum animi sapiente quidem accusamus excepturi eveniet explicabo! Recusandae impedit voluptatibus esse cum repellat quisquam sint repudiandae eaque suscipit, pariatur debitis nemo quia cumque obcaecati iure? Laboriosam, fuga. Mollitia obcaecati excepturi rerum debitis dolorum, quidem nihil nam enim voluptatibus consectetur, ipsam nobis quo temporibus eum unde iusto autem et.
-            </p>
-        </li>
+        {% endfor %}
     </ul>
 </section>
 

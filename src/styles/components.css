@@ -126,27 +126,30 @@ a.-b-info:hover{
 
 
 
+
 .-layout-2Col_ImgSpread-2{
     display: flex;
     gap: calc(var(--s-sideMargin));
-    flex-direction: column;
     align-items: center;
 }
+.-layout-2Col_ImgSpread-2 .container{
+    flex: 1;
+}
+.-layout-2Col_ImgSpread-2 .imgWrapper{
+    flex: 1;
+}
+
 .-layout-2Col_ImgSpread-2 > .imgWrapper {
     align-self: stretch;
 }
 
-@media screen and (min-width: 700px ){
+@media screen and (max-width: 800px ){
     .-layout-2Col_ImgSpread-2{
-        flex-direction: row;
-    }
-    .-layout-2Col_ImgSpread-2 .container{
-        flex: 1;
-    }
-    .-layout-2Col_ImgSpread-2 .imgWrapper{
-        flex: 0.85;
+        flex-direction: column;
     }
 }
+
+
 
 
 .-layout-3Col_Card_fixed1.cardContainer{
@@ -213,7 +216,7 @@ a.-b-info:hover{
 .-layout-2ColGrid_Card_1{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--s-sideMargin);
+    gap: var(--s-spacing5);
 }
 
 @media screen and (max-width:1000px){
@@ -230,7 +233,7 @@ a.-b-info:hover{
     flex-direction: column;
 }
 
-@media screen and (min-width: 700px ){
+@media screen and (min-width: 800px ){
     .-layout-2Col_ImgSpread_1{
         flex-direction: row;
     }
@@ -287,19 +290,13 @@ a.-b-info:hover{
     height: auto;
 }
 
-@media screen and (max-width:1000px){
-    .-card-2  .-f-iconText-inline1 .icon{
-    }
-
-    .-card-2 .-f-iconText-inline1{
-    }
-}
-
 
 
 .-card-3 h3{
     padding-left: 3em;
     height: 2.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .-card-3 .counter{
     position: absolute;
@@ -319,9 +316,7 @@ a.-b-info:hover{
     justify-content: space-between;
     align-items: center;
 }
-.-card-testimonial > .container > .subContainer{
-    
-}
+
 
 
 .-card-testimonial .icon_quote{
@@ -357,28 +352,312 @@ body > header > *{
     width: 100%;
 }
 
-header li{
-    overflow-x: hidden;
-}
 header li * {
     text-overflow: ellipsis;
     text-wrap: nowrap;
 }
 
-body > header > nav, body > header > ul.info{
+body > header > nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-
+body > header > ul.info{
+    display: flex;
+    gap: var(--s-spacing2);
+    align-items: center;
+}
 
 body > header > nav > ul{
     display: flex;
     gap: var(--s-spacing3);
 }
 
+
+header nav a:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:950px){
+    body > header > nav .logo{
+        display: none;
+    }
+    body > header > hr{
+        display: none;
+    }
+    body > header > ul.info{
+        display: none;
+    }
+
+    body > header > nav{
+        justify-content: space-evenly;
+    }
+}
+
+header .navMenuToggle{
+    display: none;
+}
+
+@media screen and (max-width:650px){
+    header .invCheckbox:checked ~ nav{
+        animation: slideLeft 0.2s;
+    }
+
+    header .invCheckbox:not(:checked) ~ nav{
+        opacity: 0;
+        animation: slideRight 0.2s;
+    }
+    header .invCheckbox:not(:checked) ~ nav *{
+        width: 0;
+        
+    }
+
+    header .navMenuToggle{
+        width: fit-content;
+    }
+
+    header .navMenuToggle svg{
+        height: calc(var(--s-headerHeight) / 3);
+    }
+    
+    header .navMenuToggle .top-line,
+    header .navMenuToggle .bottom-line,
+    header .navMenuToggle .middle-line {
+        transform-box: fill-box;
+        transform-origin: center;
+    }
+    
+    header .invCheckbox:checked ~ .navMenuToggle .top-line  {
+        animation: down-rotate 0.2s ease-out both;
+    }
+    header .invCheckbox:checked ~ .navMenuToggle .bottom-line  {
+        animation: up-rotate 0.2s ease-out both;
+    }
+    
+    header .invCheckbox:checked ~ .navMenuToggle .middle-line  {
+        animation: hide 0.2s ease-out forwards;
+    }
+
+    /* When toggled OFF */
+    header .invCheckbox:not(:checked) ~ .navMenuToggle .top-line {
+        animation: down-rotate-reverse 0.2s ease-out both;
+    }
+    header .invCheckbox:not(:checked) ~ .navMenuToggle .bottom-line {
+        animation: up-rotate-reverse 0.2s ease-out both;
+    }
+    header .invCheckbox:not(:checked) ~ .navMenuToggle .middle-line {
+        animation: show 0.2s ease-out forwards;
+    }
+
+    header .navMenuToggle{
+        display: block;
+        margin-bottom: auto;
+        margin-top: auto;                                  
+    }
+
+
+        header .invCheckbox:checked ~ nav{
+        animation: slideLeft 0.2s;
+    }
+
+    header .invCheckbox:not(:checked) ~ nav{
+        opacity: 0;
+        animation: slideRight 0.2s;
+    }
+    header .invCheckbox:not(:checked) ~ nav *{
+        width: 0;
+        
+    }
+
+    header .navMenuToggle svg{
+        height: calc(var(--s-headerHeight) / 3);
+    }
+    
+    header .navMenuToggle .top-line,
+    header .navMenuToggle .bottom-line,
+    header .navMenuToggle .middle-line {
+        transform-box: fill-box;
+        transform-origin: center;
+    }
+    
+    header .invCheckbox:checked ~ .navMenuToggle .top-line  {
+        animation: down-rotate 0.2s ease-out both;
+    }
+    header .invCheckbox:checked ~ .navMenuToggle .bottom-line  {
+        animation: up-rotate 0.2s ease-out both;
+    }
+    
+    header .invCheckbox:checked ~ .navMenuToggle .middle-line  {
+        animation: hide 0.2s ease-out forwards;
+    }
+
+    /* When toggled OFF */
+    header .invCheckbox:not(:checked) ~ .navMenuToggle .top-line {
+        animation: down-rotate-reverse 0.2s ease-out both;
+    }
+    header .invCheckbox:not(:checked) ~ .navMenuToggle .bottom-line {
+        animation: up-rotate-reverse 0.2s ease-out both;
+    }
+    header .invCheckbox:not(:checked) ~ .navMenuToggle .middle-line {
+        animation: show 0.2s ease-out forwards;
+    }
+
+    header .navMenuToggle{
+        display: block;
+        margin-bottom: auto;
+        margin-top: auto;                                  
+    }
+
+    header nav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: var(--s-spacing4) var(--s-sideMargin);
+        background-color: var(--c-BG1);
+        gap: var(--s-spacing5);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+    }
+
+    header nav {
+        margin-left: auto;
+        z-index: 100;
+    }
+    body > header > nav .logo{
+        display: block;
+    }
+    header nav ul{
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-spacing5);
+    }
+    header nav ul *{
+        width: fit-content;
+    }
+
+}
+
+
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translatex(0);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translatex(100%);
+    }
+}
+
+
+
+
+@keyframes up-rotate {
+	0% {
+		animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+		transform: translateY(0px);
+	}
+	30% {
+		transform-origin: center;
+		animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+		transform: translateY(-10px);
+	}
+	100% {
+		transform-origin: center;
+		transform: translateY(-10px) rotate(45deg) scale(0.9);
+	}
+}
+
+@keyframes down-rotate {
+	0% {
+		animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+		transform: translateY(0px);
+	}
+	30% {
+		transform-origin: center;
+		animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+		transform: translateY(10px);
+	}
+	100% {
+		transform-origin: center;
+		transform: translateY(10px) rotate(-45deg) scale(0.9);
+	}
+}
+
+@keyframes hide {
+	29% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes up-rotate-reverse {
+	0% {
+		transform-origin: center;
+		transform: translateY(-10px) rotate(45deg) scale(0.9);
+	}
+	70% {
+		transform-origin: center;
+		animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+		transform: translateY(-10px);
+	}
+	100% {
+		animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+		transform: translateY(0px);
+	}
+}
+
+
+@keyframes down-rotate-reverse {
+	0% {
+		transform-origin: center;
+		transform: translateY(10px) rotate(-45deg) scale(0.9);
+	}
+	70% {
+		transform-origin: center;
+		animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+		transform: translateY(10px);
+	}
+	100% {
+		animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+		transform: translateY(0px);
+	}
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+	29% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 
 
 
@@ -410,14 +689,31 @@ body > header > nav > ul{
 
 
 
+/****************************************************************************************************************************************/
+/*********************************************************** LAYOUT SPECIFIC ************************************************************/
+/****************************************************************************************************************************************/
+
+
+#aboutHome > .imgWrapper{
+    flex: 1.5;
+}
+
 
 /****************************************************************************************************************************************/
 /**************************************************************** OTHER *****************************************************************/
 /****************************************************************************************************************************************/
 
 
-
-hr{
+header hr{
     background-color: var(--c-accent1);
+}
+hr{
+    background-color: var(--c-accent3);
     height: var(--s-border1);
+}
+
+
+
+.-lf-backsplash-1{
+    
 }
