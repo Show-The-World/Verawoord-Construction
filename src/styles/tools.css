@@ -45,9 +45,16 @@
 .-spread-spacing3 > *:not(:last-child){
     margin-bottom: var(--s-spacing3);
 }
-.-spread-spacing4 > *:not(:last-child){
+.-spread-spacing5 > *:not(:last-child){
     margin-bottom: var(--s-spacing4);
 }
+.-spread-spacing4 > *:not(:last-child){
+    margin-bottom: var(--s-spacing5);
+}
+.-spread-spacing6 > *:not(:last-child){
+    margin-bottom: var(--s-spacing6);
+}
+
 
 
 .-spread-3Col_1{
