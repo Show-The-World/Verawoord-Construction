@@ -763,26 +763,26 @@ header .navMenuToggle{
 /******************************************************************************************************************************************/
 
 
-footer{
+footer .container{
     display: flex;
     width: 100%;
     --gapSize: var(--s-spacing8);
 }
-footer .descriptionContainer{
+footer .container .descriptionContainer{
     flex: 0.3;
 }
-footer .descriptionContainer .logo{
+footer .container .descriptionContainer .logo{
     margin-bottom: var(--s-spacing3);
     
     object-fit: contain;
     height: auto;
     width: 30%;
 }
-footer .descriptionContainer .logo:hover{
+footer .container .descriptionContainer .logo:hover{
     scale: 1.1;
 }
 
-footer .infoContainer{
+footer .container .infoContainer{
     flex: 1;
 
     display: flex;
@@ -791,24 +791,44 @@ footer .infoContainer{
     justify-content: end;
 }
 
-footer .infoContainer *:not(:last-child){
+footer .container .infoContainer *:not(:last-child){
     margin-bottom: 1.4em;
 }
 
+
+.footer-band{
+    margin-top: var(--s-spacing7);
+    width: 100%;
+    text-align: center;
+}
+.footer-band, .footer-band *{
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+.footer-band a{
+    text-decoration: underline;
+}
+.footer-band a:hover{
+    transition: 0.2s ease-in;
+    font-weight: 600;
+}
+
+
 @media screen and (max-width:1000px){
-    footer{
+    footer .container{
         flex-direction: column;
         gap: var(--gapSize);
     }
 
-    footer .infoContainer{
+    footer .container .infoContainer{
         justify-content: center;
     }
 }
 
 
 @media screen and (max-width:480px){
-    footer .infoContainer{
+    footer .container .infoContainer{
         flex-direction: column;
     }
 }
