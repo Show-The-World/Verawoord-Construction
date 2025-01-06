@@ -22,7 +22,7 @@ h2{
     font-weight: 500;
 }
 
-h3{
+h3, .-t-h3{
     font-family: Sofia Sans, sans-serif;
     font-size: calc((22 /16 * 1rem) + ((32 - 22) * ((100vw - 320px) / (1920 - 320))));
     font-weight: 500;
@@ -56,6 +56,12 @@ a, button, label, input[type=submit], .-t-1{
     font-size: calc((24 /16 * 1rem) + ((46 - 24) * ((100vw - 320px) / (1920 - 320))));
 }
 
+
+.-t-light1{
+    font-weight: 200;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+}
 
 .-t-uppercase{
     text-transform: uppercase;
@@ -752,9 +758,60 @@ header .navMenuToggle{
 }
 
 
+/******************************************************************************************************************************************/
+/**************************************************************** FOOTER ******************************************************************/
+/******************************************************************************************************************************************/
 
 
+footer{
+    display: flex;
+    width: 100%;
+    --gapSize: var(--s-spacing8);
+}
+footer .descriptionContainer{
+    flex: 0.3;
+}
+footer .descriptionContainer .logo{
+    margin-bottom: var(--s-spacing3);
+    
+    object-fit: contain;
+    height: auto;
+    width: 30%;
+}
+footer .descriptionContainer .logo:hover{
+    scale: 1.1;
+}
 
+footer .infoContainer{
+    flex: 1;
+
+    display: flex;
+    gap: var(--gapSize);
+
+    justify-content: end;
+}
+
+footer .infoContainer *:not(:last-child){
+    margin-bottom: 1.4em;
+}
+
+@media screen and (max-width:1000px){
+    footer{
+        flex-direction: column;
+        gap: var(--gapSize);
+    }
+
+    footer .infoContainer{
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width:480px){
+    footer .infoContainer{
+        flex-direction: column;
+    }
+}
 
 /******************************************************************************************************************************************/
 /**************************************************************** subHero *****************************************************************/

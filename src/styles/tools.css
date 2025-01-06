@@ -208,10 +208,10 @@
 
 
 /* Sets Half background to section to spefific color */
-.-lf-bgColorHalf-1 {
+.-lf-bgColorHalf-hor-1 {
     position: relative;
 }
-.-lf-bgColorHalf-1::before {
+.-lf-bgColorHalf-hor-1::before {
     content: "";
     position: absolute;
     background-color: var(--c-accent2);
@@ -224,10 +224,28 @@
 
 
 @media screen and (max-width:800px){
-    .-lf-bgColorHalf-1::before {
+    .-lf-bgColorHalf-hor-1::before {
         all: unset;
     }
 }
+
+
+
+.-lf-bgColorHalf-vert-1{
+    position: relative;
+}
+
+.-lf-bgColorHalf-vert-1::before {
+    content: "";
+    position: absolute;
+    background-color: var(--c-FG1);
+    bottom: 0;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: -999;
+}
+
 
 
 
