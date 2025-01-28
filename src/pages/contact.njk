@@ -40,7 +40,7 @@ hasCTA: false
 
                 <div class="inputContainer -inputContainer-fileUpload-1">
                     <label class="-t-pSmall" for="files">Upload Related Project Photos / Files</label>
-                    <input type="file" id="files" name="files" multiple>
+                    <input type="file" id="files" name="files">
                 </div>
 
                 <input class="-b-2" type="submit" value="Send Message">
@@ -87,53 +87,47 @@ hasCTA: false
       });
     }
 
-    async function handleFormSubmit(event) {
-      event.preventDefault();
-      console.log("testing")
+    async function handleFileInputChange(event) {
+      const input = event.target;
+      const files = Array.from(input.files);
 
-      const form = document.getElementById('contactForm');
-      const filesInput = document.getElementById('files');
-      const files = Array.from(filesInput.files);
-
-      if (files.length === 0) {
-        form.submit(); // No files, just submit the form normally
-        return;
-      }
+      if (files.length === 0) return;
 
       const zip = new JSZip();
 
-      // Process and add each file to the zip
+      // Resize and add files to the zip
       for (const file of files) {
         if (file.type.startsWith('image/')) {
-          // Resize and compress images
           const resizedImage = await resizeImage(file);
           zip.file(file.name, resizedImage);
         } else {
-          // Add non-image files as they are
           zip.file(file.name, file);
         }
       }
 
-      // Generate the zip blob
+      // Generate the zip file
       const zipBlob = await zip.generateAsync({ type: 'blob' });
 
-      // Create a new hidden input field for the zip file
-      // const zipFileInput = document.createElement('input');
-      // zipFileInput.type = 'hidden';
-      // zipFileInput.name = 'files';
-      // const zipFile = new File([zipBlob], 'compressed_files.zip', { type: 'application/zip' });
-      // const dataTransfer = new DataTransfer();
-      // dataTransfer.items.add(zipFile);
-      // zipFileInput.files = dataTransfer.files;
+      // Revert the input to accept a single file and attach the zip
+      input.removeAttribute('multiple');
+      const zipFile = new File([zipBlob], 'compressed_files.zip', { type: 'application/zip' });
 
-      // Append the hidden input to the form
-      // form.appendChild(zipFileInput);
+      const dataTransfer = new DataTransfer();
+      dataTransfer.items.add(zipFile);
+      input.files = dataTransfer.files;
 
-      // Submit the form
-      form.submit();
+      alert('Files have been compressed and zipped!');
     }
 
-    document.getElementById('contactForm').addEventListener('submit', handleFormSubmit);
+    document.addEventListener('DOMContentLoaded', () => {
+      const fileInput = document.getElementById('files');
+
+      // Add the multiple attribute when the page loads
+      fileInput.setAttribute('multiple', '');
+
+      // Add event listener to process files when user selects them
+      fileInput.addEventListener('change', handleFileInputChange);
+    });
 </script>
 
 </section>
