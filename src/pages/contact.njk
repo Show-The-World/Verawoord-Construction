@@ -7,7 +7,9 @@ hasCTA: false
 
 {% block links %}{% endblock %}
 
-{% block head %}{% endblock %}
+{% block head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+{% endblock %}
 
 
 
@@ -46,7 +48,7 @@ hasCTA: false
         </div>
         <div class="imgWrapper"><img src="/assets/img7.jpg" alt=""></div>
     </div>
-      <script>
+<script>
     async function resizeImage(file, maxSize = 1024) {
       return new Promise((resolve) => {
         const img = new Image();
@@ -132,7 +134,7 @@ hasCTA: false
     }
 
     document.getElementById('contactForm').addEventListener('submit', handleFormSubmit);
-  </script>
+</script>
 
 </section>
 <iframe class="-l-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2804.638348606818!2d-75.7090560881319!3d45.335924941867695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x27861106a3e52e83%3A0x850baa8a79314d8c!2sVerawood%20Construction!5e0!3m2!1sen!2sca!4v1734494696389!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
