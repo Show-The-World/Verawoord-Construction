@@ -314,16 +314,15 @@ a.-b-info:hover::after {
 
 .-inputContainer-1{
     border-bottom: solid var(--c-accent2) var(--s-border2);
+    padding-left: 20px;
 }
 .-inputContainer-1 label{
     font-weight: 300;
-    margin-left: 20px;
 }
 .-inputContainer-1 input, .-inputContainer-1 textarea {
     margin-top: 0.6em;
-    padding-bottom: 0.25em;
+    padding: 0.5em;
     font-size: 20px;
-    padding-left: 20px;
 }
 
 
