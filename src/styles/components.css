@@ -327,6 +327,19 @@ a.-b-info:hover::after {
 }
 
 
+.-inputContainer-fileUpload-1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.-inputContainer-fileUpload-1 label{
+    font-weight: 300;
+    margin-bottom: 1em;
+}
+.-inputContainer-fileUpload-1 input{
+    width: auto;
+}
+
 
 .-formGroup-hor{
     display: flex;
@@ -338,6 +351,7 @@ a.-b-info:hover::after {
         flex-direction: column;
     }
 }
+
 
 
 

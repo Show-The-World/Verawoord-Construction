@@ -17,7 +17,7 @@ hasCTA: false
     <div class="layout -l-2Col-SpreadHalfImage-1 -lf-bgColor-2">
         <div class="container -lu-padding-even5 -spread-spacing5">
             <h2 class="-t-uppercase">Let’s Talk About <br>Your Project</h2>
-            <form class="-form-1" action="">
+            <form class="-form-1" netlify>
                 <div class="inputContainer -inputContainer-1">
                     <label class="-t-pSmall" for="name">Name</label>
                     <input type="text" name="name" id="name">
@@ -36,6 +36,12 @@ hasCTA: false
                     <label class="-t-pSmall" for="message">Message</label>
                     <textarea name="message" id="message"></textarea>
                 </div>
+
+                <div class="inputContainer -inputContainer-fileUpload-1">
+                    <label class="-t-pSmall" for="files">Upload Related Project Photos / Files</label>
+                    <input type="file" id="files" name="files[]" multiple>
+                </div>
+
                 <input class="-b-2" type="submit" value="Send Message">
             </form>
         </div>
