@@ -135,8 +135,8 @@ hasSubHero: false
 </section>
 
 
-<section class="section">
-    <h2 class="-t-uppercase">What Our Clients Say</h2>
+<section class="section -sectionItems-center">
+    <h2 class="-t-uppercase">What Do Our Clients Have To Say?</h2>
     <ul class="layout -layout-2ColGrid_Card_1">
         {% for review in reviews.list.slice(0, 2) %}
         <li class="card -lf-bgColor-2 -card-testimonial -lu-padding-even2 -spread-spacing1" style="--starCount: {{ review.starCount }};">
@@ -153,6 +153,7 @@ hasSubHero: false
         </li>
         {% endfor %}
     </ul>
+    <a class="-b-2" href="/contact#form">Read More Testimonials</a>
 </section>
 
 

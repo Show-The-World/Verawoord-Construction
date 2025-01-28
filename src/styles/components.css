@@ -122,7 +122,22 @@ a, button, label, input[type=submit], .-t-1{
 }
 
 a.-b-info:hover{
-    filter: blur(0.065em);
+    filter: invert(0.5);
+}
+
+a.-b-info::after {
+    content: "";
+    position: absolute;
+    bottom: -0.35em;
+    left: 50%;
+    width: 0;
+    height: 0.11em;
+    background: var(--c-FG1);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+a.-b-info:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 
@@ -466,6 +481,7 @@ body > header > ul.info{
     display: flex;
     gap: var(--s-spacing2);
     align-items: center;
+    justify-content: end;
 }
 
 body > header > nav > ul{
