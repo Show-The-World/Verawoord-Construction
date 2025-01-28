@@ -118,16 +118,16 @@ hasCTA: false
       const zipBlob = await zip.generateAsync({ type: 'blob' });
 
       // Create a new hidden input field for the zip file
-      const zipFileInput = document.createElement('input');
-      zipFileInput.type = 'hidden';
-      zipFileInput.name = 'files';
-      const zipFile = new File([zipBlob], 'compressed_files.zip', { type: 'application/zip' });
-      const dataTransfer = new DataTransfer();
-      dataTransfer.items.add(zipFile);
-      zipFileInput.files = dataTransfer.files;
+      // const zipFileInput = document.createElement('input');
+      // zipFileInput.type = 'hidden';
+      // zipFileInput.name = 'files';
+      // const zipFile = new File([zipBlob], 'compressed_files.zip', { type: 'application/zip' });
+      // const dataTransfer = new DataTransfer();
+      // dataTransfer.items.add(zipFile);
+      // zipFileInput.files = dataTransfer.files;
 
       // Append the hidden input to the form
-      form.appendChild(zipFileInput);
+      // form.appendChild(zipFileInput);
 
       // Submit the form
       form.submit();
