@@ -1,0 +1,214 @@
+/* ***************************************************** */
+/* *********************** RESET *********************** */
+/* ***************************************************** */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ol, ul {
+	list-style: none;
+}
+
+/* Text */
+blockquote, q {
+	quotes: none;
+}
+a, strong, em, mark, code, kbd, small, sub,
+sup, blockquote {
+  text-decoration: none;
+}
+
+
+/* Inputs */
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+input, textarea, select {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+textarea {
+  resize: vertical;
+}
+input:focus, textarea:focus, select:focus, button:focus {
+  outline: none;
+}
+input::placeholder, textarea::placeholder {
+  color: currentColor;
+  opacity: 0.6;
+}
+input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* ***************************************************** */
+/* ********************** DEFAULT ********************** */
+/* ***************************************************** */
+
+/* ***************** Body ***************** */
+body{
+  min-height: 100vh;
+  height: inherit;
+  width: inherit;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  font-family: sans-serif;
+}
+
+body * {
+  font-family: inherit;
+}
+
+/* ***************** Body Children ***************** */
+
+main#root-content > section, #root-header, #root-footer{
+  padding-left: var(--gSidePadding);
+  padding-right: var(--gSidePadding);
+}
+main#root-content > section{
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+#root-footer {
+  margin-top: auto;
+}
+
+/* ***************** Main ***************** */
+
+#root-content{
+  width: 100%;
+  height: auto;
+}
+#root-content > *:first-child{
+  padding-top: calc(var(--gSectionSpacing)/4);
+}
+
+#root-content > *:not(:last-child) {
+  padding-bottom: calc(var(--gSectionSpacing) / 2);
+}
+#root-content > *:not(:first-child) {
+  padding-top: calc(var(--gSectionSpacing) / 2);
+}
+
+
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+.imgWrapper img{
+  width: 100%;
+  height: 100%;
+}
+
+/* ***************** icon-link ***************** */
+
+.iconLink{
+  display: block;
+}
+.iconLink img{
+  width: 100%;
+  height: auto;
+}
+
+
+/* ***************************************************** */
+/* *********************** UTILS *********************** */
+/* ***************************************************** */
+
+
+
+
+
+
+
+/* ***************************************************** */
+/* ******************** COMPONENTS ********************* */
+/* ***************************************************** */
+
+
+
+.blink {
+  display: block;
+  width: fit-content;
+}
+
+
+.iconLink{
+  width: 64px;
+}
+.iconLink img{
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,225 @@
+{# Tells the browser to use modern HTML parsing rules #}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {# Character encoding #}
+    <meta
+    charset="UTF-8"/> {# Viewport settings for responsive design #}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ title }}</title>
+    {# Meta and SEO #}
+    {% block meta %}{% endblock meta %}
+    {# Favicon for the website #}
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg"/>
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png"/>
+    <meta name="apple-mobile-web-app-title" content="Verawood"/>
+    <link rel="manifest" href="/assets/favicon/site.webmanifest"/> {# Additional head elements can be added here #}
+    {# Fonts #} <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet"> {# Styles #}
+    <link rel="stylesheet" href="/assets/google-ads/global.css">
+    <link
+    rel="stylesheet" href="/assets/google-ads/styles.css">
+    {# JavaScript files can be included here #}
+    {% block head_scripts %}{% endblock head_scripts %}
+  </head>
+  <body>
+    {# Header section of the page #}
+    <header id="root-header">
+      <div class="imgWrapper"><img src="/assets/logo_dark.svg" alt="Verawood Construction logo" class="log"></div>
+      <div class="cta">
+        <div class="label --t-big-2">Talk To A Kitchen Reno Expert</div>
+        <a class="bLink-2" href="tel:+6138940745">(613) 894 - 0745</a>
+      </div>
+    </header>
+    {# Main content of the page #}
+    <main id="root-content">
+      <section id="hero" class="section -l-hero --invertColor">
+        <h1>Kitchen Renovations In Ottawa You Can Feel Confident About</h1>
+        <div class="container1">
+          <p class="--t-p-2">Plan a better kitchen with a local team known for clear communication, thoughtful guidance, and quality work from start to finish.</p>
+          <div class="container1-sub">
+            <img src="/assets/review_stars.svg" alt="Five star rating" class="reviewIcon">
+            <div class="review --t-small"><img class="textIcon" src="/assets/icon_google.svg" alt="Google"> <span>5.0 average Google rating</span>
+            </div>
+          </div>
+        </div>
+        <div class="container2">
+          <div class="imgWrapper"><img src="/assets/img11.jpg" alt="Verawood Construction kitchen renovation project"></div>
+          <div class="spread">
+            <h2>Serving Nepean, Kanata, And Greater Ottawa With Kitchen Renovations Done Right</h2>
+            <ul class="--ul-1">
+              <li>Guided design and finish choices</li>
+              <li>Professional team from start to finish</li>
+              <li>Clean, respectful work areas</li>
+              <li>Clear communication throughout</li>
+            </ul>
+            <a class="bLink-2" href="./#form1">Request A Kitchen Quote</a>
+          </div>
+        </div>
+      </section>
+      <section id="highlights" class="section cardContainer --bg-2 -layout-3Col_Card_fixed1">
+        <div class="card -card-2 -spread-spacing1">
+          <p class="--t-big">Trusted</p>
+          <hr>
+          <h3 class="-t-1 -f-iconText-inline1">
+            <div class="icon"><img src="/assets/icon_stats_home.svg" alt="Home icon">
+            </div>
+            From First <br>Call
+          </h3>
+        </div>
+        <div class="card -card-2 -spread-spacing1">
+          <p class="--t-big">5.0</p>
+          <hr>
+          <h3 class="-t-1 -f-iconText-inline1">
+            <div class="icon"><img src="/assets/icon_stats_5-stars.svg" alt="Five star review icon">
+            </div>
+            Google <br>Rating
+          </h3>
+        </div>
+        <div class="card -card-2 -spread-spacing1">
+          <p class="--t-big">Full</p>
+          <hr>
+          <h3 class="-t-1 -f-iconText-inline1">
+            <div class="icon"><img src="/assets/icon_stats_full-kitchen-reno.svg" alt="Kitchen renovation icon">
+            </div>
+            Kitchen <br>Renovations
+          </h3>
+        </div>
+      </section>
+      <section id="google-review" class="--l-testimonial --bg-2 --narrowSection4">
+          <h2 class="--t-small-2a">Google Review</h2>
+          <blockquote class="--bg-1">
+            <p class="--t-h1">“From the beginning of this project we knew we were in good hands.”</p>
+            <footer>
+              <cite class="--t-small-2">Petra, Google Review</cite>
+            </footer>
+          </blockquote>
+      </section>
+
+      <section id="before-after" class="--l-beforeAfter --narrowSection4">
+        <h2>A Kitchen Renovation You Can See And Feel</h2>
+        <p>From the first plan to the final finish, the goal is a beautifully designed, cleaner, more useful kitchen built with care.</p>
+        <div class="container">
+          <div class="imgWrapper">
+            <div class="label before --t-small-2">Before</div><img src="/assets/google-ads/kitchen_before1.jpg" alt="Kitchen before renovation"/></div>
+          <div class="imgWrapper">
+            <div class="label after --t-small-2">After</div><img src="/assets/google-ads/kitchen_after1.jpg" alt="Kitchen after renovation"/></div>
+        </div>
+      </section>
+
+      <section id="kitchen-inquiry" class="--bg-2 --l-1">
+        <form action="" class="--bg-1 form1" id="form1">
+          <h2 class="--t-h1">Start Your Kitchen Renovation</h2>
+          <div class="formGroup">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="formGroup">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="formGroup">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="bLink-3" type="submit">Request A Kitchen Quote</button>
+        </form>
+        <div class="imgWrapper"><img src="/assets/img10.jpg" alt="Verawood Construction renovation project"></div>
+      </section>
+
+      <section id="about-verawood" class="--l-1">
+        <div class="spread">
+          <h2>A Renovation Team<br>You Can Trust</h2>
+          <p>Choosing a kitchen renovator is a big decision. Verawood Construction is built around clear communication, professional project management, and work handled with integrity. Homeowners describe the team as organized, honest, reliable, and easy to work with from the first conversation to the finished result.<br><br>If you are still comparing contractors, the next step does not need to feel overwhelming. Reach out with your questions, your goals, or the parts of the renovation you are unsure about. The team can help you understand what is realistic, what choices matter most, and how to move forward with confidence.</p>
+          <div class="--sprayout-1">
+            <div class="card spread">
+              <h3 class="--t-small-3">Communication</h3>
+              <p class="--t-p-3">Clear updates before, during, and after the work</p>
+            </div>
+            <div class="card spread">
+              <h3 class="--t-small-3">Guidance</h3>
+              <p class="--t-p-3">Help with layout, finishes, and project decisions</p>
+            </div>
+            <div class="card spread">
+              <h3 class="--t-small-3">Integrity</h3>
+              <p class="--t-p-3">Professional work handled with care and respect</p>
+            </div>
+          </div>
+        </div>
+        <div class="imgWrapper"><img src="/assets/img7.jpg" alt="Completed Verawood Construction renovation project"></div>
+      </section>
+
+      <section id="ready-to-start" class="--invertColor --bg-3 --l-cta2 --narrowSection6">
+        <h2>Still Thinking It Through?</h2>
+        <p>Tell Verawood what you are considering, even if you are not ready to start yet. A short message is enough to get a clearer next step.</p>
+        <form action="">
+          <div class="container">
+            <div class="formGroup">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="formGroup">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="formGroup">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="bLink-1" type="submit">Ask About Your Kitchen Reno</button>
+        </form>
+      </section>
+    </main>
+    {# Footer section of the page #}
+    <footer id="root-footer" class="--invertColor --bg-3">
+      <div class="container">
+        <div class="descriptionContainer">
+          <a href="/" class="iconLink"><img src="/assets/logo_small_light.svg" alt="Verawood Construction logo"> </a>
+          <p class="--t-p-3">Verawood Construction provides kitchen renovations and home renovation services across Ottawa, Kanata, Nepean, and Orleans. The team is known for professional work, clear communication, and integrity.</p>
+        </div>
+        <div class="infoContainer">
+          <div class="contactContainer">
+            <div class="--t-p-2 title">Contact</div>
+            <ul>
+              <li>
+                <a class="--t-p-3" href="mailto:info@verawoodconstruction.com">Info@verawoodconstruction.com</a>
+              </li>
+              <li>
+                <a class="--t-p-3" href="tel:+6138940745">(613) 894 - 0745</a>
+              </li>
+              <li>
+                <address class="--t-p-3">6 Antares Dr Unit 16, Nepean, ON K2E 8A9</address>
+              </li>
+            </ul>
+          </div>
+          <div class="navContainer">
+            <div class="--t-p-2 title">Navigation</div>
+            <nav>
+              <ul>
+                <li><a class="--t-p-3" href="/">Home</a></li>
+                <li><a class="--t-p-3" href="/about">About Us</a></li>
+                <li><a class="--t-p-3" href="/testimonials">Testimonials</a></li>
+                <li><a class="--t-p-3" href="/gallery">Gallery</a></li>
+                <li><a class="--t-p-3" href="/contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="footer-band">Copyright 2024
+        <a href="https://showtheworld.digital">Show The World</a>. All rights reserved.</div>
+    </footer>
+    {# JavaScript files can be included here #}
+    {% block body_scripts %}{% endblock body_scripts %}
+  </body>
+</html>
