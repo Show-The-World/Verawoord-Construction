@@ -56,83 +56,82 @@
   </header>
   {# Main content of the page #}
   <main id="root-content">
+    {% set hero = sections["hero"] %}
     <section id="hero" class="section -l-hero --invertColor">
-      <h1>Kitchen Renovations In Ottawa You Can Feel Confident About</h1>
+      <h1>{{ hero.heading }}</h1>
       <div class="container1">
-        <p class="--t-p-2">Plan a better kitchen with a local team known for clear communication, thoughtful guidance, and quality work from start to finish.</p>
+        <p class="--t-p-2">{{ hero.intro }}</p>
         <div class="container1-sub">
           <img src="/assets/review_stars.svg" alt="Five star rating" class="reviewIcon">
-          <div class="review --t-small"><img class="textIcon" src="/assets/icon_google.svg" alt="Google"> <span>5.0 average Google rating</span>
+          <div class="review --t-small"><img class="textIcon" src="/assets/icon_google.svg" alt="Google"> <span>{{ hero.ratingText }}</span>
           </div>
         </div>
       </div>
       <div class="container2">
-        <div class="imgWrapper"><img src="/assets/img11.jpg" alt="Verawood Construction kitchen renovation project"></div>
+        <div class="imgWrapper"><img src="{{ hero.image.src }}" alt="{{ hero.image.alt }}"></div>
         <div class="spread">
-          <h2>Serving Nepean, Kanata, Orleans, And Greater Ottawa With Kitchen Renovations Done Right</h2>
+          <h2>{{ hero.subheading }}</h2>
           <ul class="--ul-1">
-            <li>Guided design and finish choices</li>
-            <li>Professional team from start to finish</li>
-            <li>Clean, respectful work areas</li>
-            <li>Clear communication throughout</li>
+            {% for bullet in hero.bullets %}
+            <li>{{ bullet }}</li>
+            {% endfor %}
           </ul>
-          <a class="bLink-2" href="./#kitchen-inquiry">Request A Kitchen Quote</a>
+          <a class="bLink-2" href="{{ hero.cta.href }}">{{ hero.cta.text }}</a>
         </div>
       </div>
     </section>
+    {% set highlights = sections["highlights"] %}
     <section id="highlights" class="section cardContainer --bg-2 -layout-3Col_Card_fixed1">
+      {% for card in highlights.cards %}
       <div class="card -card-2 -spread-spacing1">
-        <p class="--t-big">Trusted</p>
+        <p class="--t-big">{{ card.eyebrow }}</p>
         <hr>
         <h3 class="-t-1 -f-iconText-inline1">
-          <div class="icon"><img src="/assets/icon_stats_home.svg" alt="Home icon">
+          <div class="icon">
+            {% if loop.index == 1 %}
+            <img src="/assets/icon_stats_home.svg" alt="Home icon">
+            {% elif loop.index == 2 %}
+            <img src="/assets/icon_stats_5-stars.svg" alt="Five star review icon">
+            {% else %}
+            <img src="/assets/icon_stats_full-kitchen-reno.svg" alt="Kitchen renovation icon">
+            {% endif %}
           </div>
-          From First <br>Call
+          {% for line in card.label %}{{ line }}{% if not loop.last %} <br>{% endif %}{% endfor %}
         </h3>
       </div>
-      <div class="card -card-2 -spread-spacing1">
-        <p class="--t-big">5.0</p>
-        <hr>
-        <h3 class="-t-1 -f-iconText-inline1">
-          <div class="icon"><img src="/assets/icon_stats_5-stars.svg" alt="Five star review icon">
-          </div>
-          Google <br>Rating
-        </h3>
-      </div>
-      <div class="card -card-2 -spread-spacing1">
-        <p class="--t-big">Full</p>
-        <hr>
-        <h3 class="-t-1 -f-iconText-inline1">
-          <div class="icon"><img src="/assets/icon_stats_full-kitchen-reno.svg" alt="Kitchen renovation icon">
-          </div>
-          Kitchen <br>Renovations
-        </h3>
-      </div>
+      {% endfor %}
     </section>
+    {% set review = sections["google-review"] %}
     <section id="google-review" class="--l-testimonial --bg-2 --narrowSection4">
         <h2 class="--t-small-2a">Google Review</h2>
         <blockquote class="--bg-1">
-          <p class="--t-h1">“From the beginning of this project we knew we were in good hands.”</p>
+          <p class="--t-h1">“{{ review.quote }}”</p>
           <footer>
-            <cite class="--t-small-2">Petra, Google Review</cite>
+            <cite class="--t-small-2">{{ review.cite }}</cite>
           </footer>
         </blockquote>
     </section>
 
+    {% set beforeAfter = sections["before-after"] %}
     <section id="before-after" class="--l-beforeAfter --narrowSection4">
-      <h2>A Kitchen Renovation You Can See And Feel</h2>
-      <p>From the first plan to the final finish, the goal is a beautifully designed, cleaner, more useful kitchen built with care.</p>
+      <h2>{{ beforeAfter.heading }}</h2>
+      <p>{{ beforeAfter.text }}</p>
       <div class="container">
+        {% for image in beforeAfter.images %}
         <div class="imgWrapper">
-          <div class="label before --t-small-2">Before</div><img src="/assets/google-ads/kitchen_before1.jpg" alt="Kitchen before renovation"/></div>
-        <div class="imgWrapper">
-          <div class="label after --t-small-2">After</div><img src="/assets/google-ads/kitchen_after1.jpg" alt="Kitchen after renovation"/></div>
+          {% if loop.index == 1 %}
+          <div class="label before --t-small-2">Before</div><img src="{{ image.src }}" alt="{{ image.alt }}"/></div>
+          {% else %}
+          <div class="label after --t-small-2">After</div><img src="{{ image.src }}" alt="{{ image.alt }}"/></div>
+          {% endif %}
+        {% endfor %}
       </div>
     </section>
 
+    {% set inquiry = sections["kitchen-inquiry"] %}
     <section id="kitchen-inquiry" class="--bg-2 --l-1">
-      <form action="/start/kitchen/thank-you/" class="--bg-1 form1" name="g-ads-form1" netlify>
-        <h2 class="--t-h1">Start Your Kitchen Renovation</h2>
+      <form action="{{ inquiry.form.action }}" class="--bg-1 form1" name="g-ads-form1" netlify>
+        <h2 class="--t-h1">{{ inquiry.form.heading }}</h2>
         <div class="formGroup">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
@@ -145,37 +144,33 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" required></textarea>
         </div>
-        <button class="bLink-3" type="submit">Request A Kitchen Quote</button>
+        <button class="bLink-3" type="submit">{{ inquiry.form.button }}</button>
       </form>
-      <div class="imgWrapper"><img src="/assets/img10.jpg" alt="Verawood Construction renovation project"></div>
+      <div class="imgWrapper"><img src="{{ inquiry.image.src }}" alt="{{ inquiry.image.alt }}"></div>
     </section>
 
+    {% set about = sections["about-verawood"] %}
     <section id="about-verawood" class="--l-1">
       <div class="spread">
-        <h2>A Renovation Team<br>You Can Trust</h2>
-        <p>Choosing a kitchen renovator is a big decision. Verawood Construction is built around clear communication, professional project management, and work handled with integrity. Homeowners describe the team as organized, honest, reliable, and easy to work with from the first conversation to the finished result.<br><br>If you are still comparing contractors, the next step does not need to feel overwhelming. Reach out with your questions, your goals, or the parts of the renovation you are unsure about. The team can help you understand what is realistic, what choices matter most, and how to move forward with confidence.</p>
+        <h2>{% for line in about.heading %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</h2>
+        <p>{% for paragraph in about.paragraphs %}{{ paragraph }}{% if not loop.last %}<br><br>{% endif %}{% endfor %}</p>
         <div class="--sprayout-1">
+          {% for card in about.cards %}
           <div class="card spread">
-            <h3 class="--t-small-3">Communication</h3>
-            <p class="--t-p-3">Clear updates before, during, and after the work</p>
+            <h3 class="--t-small-3">{{ card.heading }}</h3>
+            <p class="--t-p-3">{{ card.text }}</p>
           </div>
-          <div class="card spread">
-            <h3 class="--t-small-3">Guidance</h3>
-            <p class="--t-p-3">Help with layout, finishes, and project decisions</p>
-          </div>
-          <div class="card spread">
-            <h3 class="--t-small-3">Integrity</h3>
-            <p class="--t-p-3">Professional work handled with care and respect</p>
-          </div>
+          {% endfor %}
         </div>
       </div>
-      <div class="imgWrapper"><img src="/assets/img7.jpg" alt="Completed Verawood Construction renovation project"></div>
+      <div class="imgWrapper"><img src="{{ about.image.src }}" alt="{{ about.image.alt }}"></div>
     </section>
 
+    {% set ready = sections["ready-to-start"] %}
     <section id="ready-to-start" class="--invertColor --bg-3 --l-cta2 --narrowSection6">
-      <h2>Still Thinking It Through?</h2>
-      <p>Tell Verawood what you are considering, even if you are not ready to start yet. A short message is enough to get a clearer next step.</p>
-      <form action="/start/kitchen/thank-you/" name="g-ads-form2" netlify>
+      <h2>{{ ready.heading }}</h2>
+      <p>{{ ready.text }}</p>
+      <form action="{{ ready.form.action }}" name="g-ads-form2" netlify>
         <div class="container">
           <div class="formGroup">
             <label for="name">Name</label>
@@ -190,7 +185,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" required></textarea>
         </div>
-        <button class="bLink-1" type="submit">Ask About Your Kitchen Reno</button>
+        <button class="bLink-1" type="submit">{{ ready.form.button }}</button>
       </form>
     </section>
   </main>
