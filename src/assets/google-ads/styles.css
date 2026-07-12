@@ -560,6 +560,64 @@ a{
   object-fit: cover;
 }
 
+/* ******************** FLOOD NOTICE ********************* */
+.--l-floodNotice {
+  display: flex;
+  align-items: center;
+  gap: var(--s-hor2);
+}
+
+.--l-floodNotice .icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: clamp(4.5rem, 7vw, 6.5rem);
+  aspect-ratio: 1;
+  color: #176da5;
+  background-color: #e7f4fc;
+  border: 1px solid #b8dff5;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1.5rem rgba(23, 109, 165, 0.14);
+}
+
+.--l-floodNotice .icon svg {
+  width: 58%;
+  height: 58%;
+  fill: currentColor;
+}
+
+.--l-floodNotice .icon svg path:not(:first-child) {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.--l-floodNotice .content {
+  padding-left: var(--s-hor1);
+  border-left: 0.25rem solid #176da5;
+}
+
+.--l-floodNotice h2 {
+  color: #125d8d;
+  margin-bottom: 0.55em;
+}
+
+.--l-floodNotice p {
+  max-width: 72ch;
+  line-height: 1.7;
+}
+
+@media screen and (max-width: 620px) {
+  .--l-floodNotice {
+    align-items: flex-start;
+  }
+
+  .--l-floodNotice .icon {
+    width: 3.75rem;
+  }
+}
+
 
 
 
@@ -822,4 +880,3 @@ form.form1 >*:not(:last-child) {
   transition: 0.2s ease-in;
   font-weight: 600;
 }
-
