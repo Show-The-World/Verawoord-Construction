@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.18" role="img" aria-labelledby="title">
+  <title id="title">Basement renovation</title>
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="7" d="M8 45.5 61.44 7l53.44 38.5M18.5 38v55.5h85.88V38"/>
+    <path stroke-width="6" d="M12 58.5h98.88"/>
+    <path stroke-width="5.5" d="M29 47V30h18v17M75.5 91V70h17v21"/>
+    <path stroke-width="5" d="M30 72h27M34 79h23M38 86h19M42 93h15"/>
+    <path stroke-width="4.5" d="M66 70h-5.5v23H50"/>
+    <path stroke-width="4" d="M82 30v17M73.5 38.5h17"/>
+  </g>
+</svg>

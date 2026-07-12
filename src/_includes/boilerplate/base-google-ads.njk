@@ -50,7 +50,7 @@
   <header id="root-header">
     <div class="imgWrapper"><img src="/assets/logo_dark.svg" alt="Verawood Construction logo" class="log"></div>
     <div class="cta">
-      <div class="label --t-big-2">Talk To A Kitchen Reno Expert</div>
+      <a class="label --t-big-2" href="tel:+6138940745">Talk To A Kitchen Reno Expert</a>
       <a class="bLink-2" href="tel:+6138940745">(613) 894 - 0745</a>
     </div>
   </header>
@@ -97,7 +97,7 @@
             {% elif loop.index == 2 %}
             <img src="/assets/icon_stats_5-stars.svg" alt="Five star review icon">
             {% else %}
-            <img src="/assets/icon_stats_full-kitchen-reno.svg" alt="Kitchen renovation icon">
+            <img src="{{ highlights.statsIcon.src | default('/assets/icon_stats_full-kitchen-reno.svg') }}" alt="{{ highlights.statsIcon.alt | default('Kitchen renovation icon') }}">
             {% endif %}
           </div>
           {% for line in card.label %}{{ line }}{% if not loop.last %} <br>{% endif %}{% endfor %}
