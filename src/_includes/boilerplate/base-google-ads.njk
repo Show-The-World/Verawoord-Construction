@@ -56,6 +56,7 @@
   </header>
   {# Main content of the page #}
   <main id="root-content">
+    {% if sections["hero"] %}
     {% set hero = sections["hero"] %}
     <section id="hero" class="section -l-hero --invertColor">
       <h1>{{ hero.heading }}</h1>
@@ -80,6 +81,9 @@
         </div>
       </div>
     </section>
+    {% endif %}
+
+    {% if sections["highlights"] %}
     {% set highlights = sections["highlights"] %}
     <section id="highlights" class="section cardContainer --bg-2 -layout-3Col_Card_fixed1">
       {% for card in highlights.cards %}
@@ -101,6 +105,9 @@
       </div>
       {% endfor %}
     </section>
+    {% endif %}
+
+    {% if sections["google-review"] %}
     {% set review = sections["google-review"] %}
     <section id="google-review" class="--l-testimonial --bg-2 --narrowSection4">
         <h2 class="--t-small-2a">Google Review</h2>
@@ -111,7 +118,26 @@
           </footer>
         </blockquote>
     </section>
+    {% endif %}
 
+    {% if sections["flood-notice"] %}
+    {% set floodNotice = sections["flood-notice"] %}
+    <section id="flood-notice" class="--l-floodNotice --bg-1 --narrowSection4">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img">
+          <path d="M24 5.5C18.2 13.4 11.5 21 11.5 29.1A12.5 12.5 0 0 0 24 41.5a12.5 12.5 0 0 0 12.5-12.4C36.5 21 29.8 13.4 24 5.5Z"/>
+          <path d="M17 30.5c2.2 0 2.2-1.5 4.5-1.5s2.2 1.5 4.5 1.5 2.2-1.5 4.5-1.5"/>
+          <path d="M18.5 35c1.8 0 2-1.1 3.8-1.1s2 1.1 3.8 1.1 2-1.1 3.8-1.1"/>
+        </svg>
+      </div>
+      <div class="content">
+        <h2>{{ floodNotice.heading }}</h2>
+        <p>{{ floodNotice.text }}</p>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if sections["before-after"] %}
     {% set beforeAfter = sections["before-after"] %}
     <section id="before-after" class="--l-beforeAfter --narrowSection4">
       <h2>{{ beforeAfter.heading }}</h2>
@@ -127,22 +153,9 @@
         {% endfor %}
       </div>
     </section>
+    {% endif %}
 
-    {% set floodNotice = sections["flood-notice"] %}
-    <section id="flood-notice" class="--l-floodNotice --bg-1 --narrowSection4">
-      <div class="icon" aria-hidden="true">
-        <svg viewBox="0 0 48 48" role="img">
-          <path d="M24 5.5C18.2 13.4 11.5 21 11.5 29.1A12.5 12.5 0 0 0 24 41.5a12.5 12.5 0 0 0 12.5-12.4C36.5 21 29.8 13.4 24 5.5Z"/>
-          <path d="M17 30.5c2.2 0 2.2-1.5 4.5-1.5s2.2 1.5 4.5 1.5 2.2-1.5 4.5-1.5"/>
-          <path d="M18.5 35c1.8 0 2-1.1 3.8-1.1s2 1.1 3.8 1.1 2-1.1 3.8-1.1"/>
-        </svg>
-      </div>
-      <div class="content">
-        <h2>{{ floodNotice.heading }}</h2>
-        <p>{{ floodNotice.text }}</p>
-      </div>
-    </section>
-
+    {% if sections["kitchen-inquiry"] %}
     {% set inquiry = sections["kitchen-inquiry"] %}
     <section id="kitchen-inquiry" class="--bg-2 --l-1">
       <form action="{{ inquiry.form.action }}" class="--bg-1 form1" name="g-ads-form1" netlify>
@@ -163,7 +176,9 @@
       </form>
       <div class="imgWrapper"><img src="{{ inquiry.image.src }}" alt="{{ inquiry.image.alt }}"></div>
     </section>
+    {% endif %}
 
+    {% if sections["about-verawood"] %}
     {% set about = sections["about-verawood"] %}
     <section id="about-verawood" class="--l-1">
       <div class="spread">
@@ -180,7 +195,9 @@
       </div>
       <div class="imgWrapper"><img src="{{ about.image.src }}" alt="{{ about.image.alt }}"></div>
     </section>
+    {% endif %}
 
+    {% if sections["ready-to-start"] %}
     {% set ready = sections["ready-to-start"] %}
     <section id="ready-to-start" class="--invertColor --bg-3 --l-cta2 --narrowSection6">
       <h2>{{ ready.heading }}</h2>
@@ -203,6 +220,7 @@
         <button class="bLink-1" type="submit">{{ ready.form.button }}</button>
       </form>
     </section>
+    {% endif %}
   </main>
   {# Footer section of the page #}
   <footer id="root-footer" class="--invertColor --bg-3">
