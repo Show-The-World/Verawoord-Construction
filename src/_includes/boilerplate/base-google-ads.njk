@@ -93,11 +93,11 @@
         <h3 class="-t-1 -f-iconText-inline1">
           <div class="icon">
             {% if loop.index == 1 %}
-            <img src="/assets/icon_stats_home.svg" alt="Home icon">
+            <img src="/assets/icon_stats_home.svg" alt="Home icon" loading="lazy">
             {% elif loop.index == 2 %}
-            <img src="/assets/icon_stats_5-stars.svg" alt="Five star review icon">
+            <img src="/assets/icon_stats_5-stars.svg" alt="Five star review icon" loading="lazy">
             {% else %}
-            <img src="{{ highlights.statsIcon.src | default('/assets/icon_stats_full-kitchen-reno.svg') }}" alt="{{ highlights.statsIcon.alt | default('Kitchen renovation icon') }}">
+            <img src="{{ highlights.statsIcon.src | default('/assets/icon_stats_full-kitchen-reno.svg') }}" alt="{{ highlights.statsIcon.alt | default('Kitchen renovation icon') }}" loading="lazy">
             {% endif %}
           </div>
           {% for line in card.label %}{{ line }}{% if not loop.last %} <br>{% endif %}{% endfor %}
@@ -146,9 +146,9 @@
         {% for image in beforeAfter.images %}
         <div class="imgWrapper">
           {% if loop.index == 1 %}
-          <div class="label before --t-small-2">Before</div><img src="{{ image.src }}" alt="{{ image.alt }}"/></div>
+          <div class="label before --t-small-2">Before</div><img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy"/></div>
           {% else %}
-          <div class="label after --t-small-2">After</div><img src="{{ image.src }}" alt="{{ image.alt }}"/></div>
+          <div class="label after --t-small-2">After</div><img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy"/></div>
           {% endif %}
         {% endfor %}
       </div>
@@ -174,7 +174,7 @@
         </div>
         <button class="bLink-3" type="submit">{{ inquiry.form.button }}</button>
       </form>
-      <div class="imgWrapper"><img src="{{ inquiry.image.src }}" alt="{{ inquiry.image.alt }}"></div>
+      <div class="imgWrapper"><img src="{{ inquiry.image.src }}" alt="{{ inquiry.image.alt }}" loading="lazy"></div>
     </section>
     {% endif %}
 
@@ -193,7 +193,7 @@
           {% endfor %}
         </div>
       </div>
-      <div class="imgWrapper"><img src="{{ about.image.src }}" alt="{{ about.image.alt }}"></div>
+      <div class="imgWrapper"><img src="{{ about.image.src }}" alt="{{ about.image.alt }}" loading="lazy"></div>
     </section>
     {% endif %}
 
@@ -226,7 +226,7 @@
   <footer id="root-footer" class="--invertColor --bg-3">
     <div class="container">
       <div class="descriptionContainer">
-        <a href="/" class="iconLink"><img src="/assets/logo_small_light.svg" alt="Verawood Construction logo"> </a>
+        <a href="/" class="iconLink"><img src="/assets/logo_small_light.svg" alt="Verawood Construction logo" loading="lazy"> </a>
         <p class="--t-p-3">Verawood Construction provides kitchen renovations and home renovation services across Ottawa, Kanata, Nepean, and Orleans. The team is known for professional work, clear communication, and integrity.</p>
       </div>
       <div class="infoContainer">
